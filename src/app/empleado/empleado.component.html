@@ -1,0 +1,34 @@
+
+<p> Nombre del empleado:{{nombre}} </p>
+<p> Apellido del empleado:{{Apellido}} </p>
+<p> Empresa del empleado:{{Empresa}}</p>
+
+<!--pasar el texto del cuadro al texto dinámico sin botón  -->
+<!--Property binding 
+Introduce la empresa: <input type="text" #empresa (keyup)="0"  [disabled]="habilitacionCuadro"> -->
+
+<!--Property two way binding -->
+Introduce la empresa: <input type="text" [(ngModel)]="Empresa">
+
+<br>
+<br>
+<br>
+
+{{textoRegistro}}
+
+<br>
+
+<!--Registrado:  <input type="checkbox" id="registro" [checked]="UsuarioRegistrado" (click)="setusuarioRegistrado()" >-->
+<br>
+
+<!--Property binding -->
+Registrado:  <input type="radio" value="si" name="nRegistro" id="registro" [checked]="UsuarioRegistrado" (click)="setusuarioRegistrado($event)" >>
+
+No registrado:
+
+<input type="radio" name="nRegistro" (click)="setusuarioRegistrado($event)" >
+
+{{getRegistroUsuario()}}
+
+
+<!-- un tipo de llamado <input type="button" value="Dale!" (click)="llamaEmpresa(empresa.value)"/> -->
